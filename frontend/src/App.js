@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Box } from "@mui/material"
+import Videos from './components/Videos';
+import VideoDetails from './components/VideoDetails';
+
+export const config = {
+
+  //Mock server api
+  // endpoint: 'https://937eb2d1-2b0f-42e1-af80-2c776b32bcc1.mock.pstmn.io/v1/videos'
+  endpoint: "https://xflixbackendapp.herokuapp.com/v1/videos"
 }
 
-export default App;
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Box sx={{ backgroundColor: "#181818"}}>
+        <Switch>
+          <Route path="/" exact component={Videos} />
+          <Route path="/video/:id"  component={VideoDetails} />
+        </Switch>
+      </Box>
+    </BrowserRouter>
+  )
+}
+
+export default App
