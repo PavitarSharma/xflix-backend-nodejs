@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import { Box, Typography, Stack } from '@mui/material';
-import UploadIcon from '@mui/icons-material/Upload';
+import { Box, Stack } from '@mui/material';
+// import UploadIcon from '@mui/icons-material/Upload';
 import SearchBar from './SearchBar';
+import UploadVideo from './UploadVideo';
 
 const Header = ({ handleSearch, videoDetails }) => {
     return (
@@ -21,9 +22,12 @@ const Header = ({ handleSearch, videoDetails }) => {
             }
 
 
-            <Box sx={{ display: "flex", alignItems: "center", gap: "4px", backgroundColor: "#4ca3fc", padding: "8px 16px", cursor: "pointer" }}>
+            {/* <Box sx={{ display: "flex", alignItems: "center", gap: "4px", backgroundColor: "#4ca3fc", padding: "8px 16px", cursor: "pointer" }}>
                 <UploadIcon />
                 <Typography variant="p">Upload</Typography>
+            </Box> */}
+            <Box>
+                <UploadVideo />
             </Box>
         </Stack>
     )

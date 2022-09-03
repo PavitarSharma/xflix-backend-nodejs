@@ -10,7 +10,7 @@ import {
 } from '@mui/material'
 import axios from "axios"
 import { config } from "../App"
-import SnackBar from '../utils/SnackBar'
+import { useSnackbar } from "notistack"
 import Loading from '../utils/Loading'
 import VideoCard from './VideoCard'
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp'
@@ -19,6 +19,7 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 
 
 const Videos = ({ videoDetails }) => {
+    const { enqueueSnackbar } = useSnackbar()
     const [videos, setVideos] = useState([])
     const [loading, setLoading] = useState(false)
     const [allGenre, setAllGenre] = useState(true)
@@ -33,6 +34,7 @@ const Videos = ({ videoDetails }) => {
         sixteenPlus: false,
         eighteenPlus: false,
     })
+    //console.log(videos);
 
     const [debounceTimer, setDebounceTimer] = useState(0)
     const [age, setAge] = useState("")
@@ -71,7 +73,9 @@ const Videos = ({ videoDetails }) => {
                 setVideos(response.data.videos);
                 setLoading(false);
             } catch (error) {
-                <SnackBar message={error.response.data.message} type="error" />
+                enqueueSnackbar(`Error:${error.response.data.message}`, {
+                    variant: "error",
+                })
 
                 setLoading(false);
             }
@@ -186,7 +190,9 @@ const Videos = ({ videoDetails }) => {
             setVideos(response.data.videos);
             setLoading(false);
         } catch (error) {
-            <SnackBar message={error.response.data.message} type="error" />
+            enqueueSnackbar(`Error:${error.response.data.message}`, {
+                variant: "error",
+            })
             setLoading(false);
         }
     };

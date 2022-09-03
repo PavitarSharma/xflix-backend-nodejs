@@ -76,6 +76,8 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 2rem 0;
+  position: sticky;
+  top: 80px;
 }
 
 .iframe {
@@ -89,9 +91,25 @@ body {
   height: 80vh;
 }
 
+.upload-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 2rem;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  color: #fff;
+  z-index: 1;
+  background-color: rgb(110, 107, 107);
+}
+
 @media (max-width: 767px) {
   .ifarme-container {
     width: 90vw;
     height: 50vh;
+  }
+
+  .upload-modal {
+    width: 400px;
   }
 }

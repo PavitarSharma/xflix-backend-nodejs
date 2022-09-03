@@ -6,13 +6,14 @@ import axios from "axios"
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown"
 import { TimeFormat } from "../utils/TimeFormat"
-import SnackBar from "../utils/SnackBar"
+import { useSnackbar } from "notistack"
 import { config } from "../App"
 import Videos from './Videos'
 import Header from './Header'
 // import ReactPlayer from "react-player"
 
 const VideoDetails = () => {
+    const { enqueueSnackbar } = useSnackbar()
     const [selectVideo, setSelectVideo] = useState({})
     const [loading, setLoading] = useState(false)
     const [upVote, setUpVote] = useState(0)
@@ -32,13 +33,16 @@ const VideoDetails = () => {
             setDownVote(data.votes.downVotes)
             setLoading(false)
         } catch (error) {
-            <SnackBar message={error.response.data.message} type="error" />
+            enqueueSnackbar(`Error:${error.response.data.message}`, {
+                variant: "error",
+            })
             setLoading(false)
         }
     }
 
     const updateViews = async () => {
         const response = await axios.patch(`${config.endpoint}/${id}/views`)
+        return response
     }
 
     useEffect(() => {
@@ -66,7 +70,9 @@ const VideoDetails = () => {
             return response
 
         } catch (error) {
-            <SnackBar message={error.response.data.message} type="error" />
+            enqueueSnackbar(`Error:${error.response.data.message}`, {
+                variant: "error",
+            })
         }
     }
 
