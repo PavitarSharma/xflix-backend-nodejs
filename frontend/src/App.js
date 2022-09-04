@@ -7,7 +7,7 @@ import {
 
 import { Box } from "@mui/material"
 import Videos from './components/Videos';
-import VideoDetails from './components/VideoDetails';
+import VideoDetails from './components/VideoPage';
 
 export const config = {
 

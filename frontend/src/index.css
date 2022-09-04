@@ -20,14 +20,10 @@ body {
 }
 
 .category-btn-active {
-  background: #fff;
-  color: #181818;
-  height: 20px;
-  padding: 1.5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 25px;
+  background: #fff !important;
+  color: #181818 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 25px !important;
   cursor: pointer;
 }
 
