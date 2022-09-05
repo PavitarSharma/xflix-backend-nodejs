@@ -3,10 +3,11 @@ import SearchIcon from '@mui/icons-material/Search'
 import { Box } from "@mui/material"
 
 const SearchBar = ({ handleSearch }) => {
+    
     // const [search, setSearch] = useState("")
     return (
         <Box>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ display: "flex", alignItems: "center"}}>
                 <input
                     type="text"
                     id="search"

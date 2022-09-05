@@ -34,6 +34,20 @@ const Videos = ({ videoDetails }) => {
   });
   //console.log(videos);
 
+  /*
+  lix
+    1) should display 5 genre buttons on a row
+    2) should display 5 content rating buttons on a row
+    3) should not have same parent for genre and content rating buttons
+    4) should not have "View Count" option selected in sort by dropdown on page load
+    5) should have "Release Date" option selected in sort by dropdown on page load
+    6) should have "View Count" option selectable after clicking on the sort by dropdown
+    7) should open video modal with "Submit" and "Cancel" buttons, on clicking "Upload" button
+    8) should open video modal on clicking "Upload" button and close it on clicking "Cancel" button in the modal
+    9) should have at least 10 links (with class "video-tile-link") to different videos on page load.
+     10) should display the video page on clicking the first video tile (with class "video-tile") which has a parent element with class "video-tile-link"
+   */
+
   const [debounceTimer, setDebounceTimer] = useState(0);
   const [age, setAge] = useState("");
   const [sortBy, setSortBy] = useState("releaseDate");
@@ -296,124 +310,133 @@ const Videos = ({ videoDetails }) => {
           <Box className="genre-pannel">
             {/* Genre Pannel setting for selection */}
             <Box sx={{ marginBottom: 1, display: "flex", gap: "10px" }}>
-              <Stack>
-                <Box>
-                  <Button
-                    onClick={() => {
-                      setAllGenre(true);
-                      setEducation(false);
-                      setSports(false);
-                      setComedy(false);
-                      setLifestyle(false);
-                    }}
-                    className={allGenre ? "category-btn-active" : undefined}
-                  >
-                    All Genre
-                  </Button>
-                  <Button
-                    onClick={() => setEducation(!education)}
-                    className={education ? "category-btn-active" : undefined}
-                  >
-                    Education
-                  </Button>
-                  <Button
-                    onClick={() => setSports(!sports)}
-                    className={sports ? "category-btn-active" : undefined}
-                  >
-                    Sports
-                  </Button>
-                  <Button
-                    onClick={() => setComedy(!comedy)}
-                    className={comedy ? "category-btn-active" : undefined}
-                  >
-                    Comedy
-                  </Button>
-                  <Button
-                    onClick={() => setLifestyle(!lifestyle)}
-                    className={lifestyle ? "category-btn-active" : undefined}
-                  >
-                    Lifestyle
-                  </Button>
+              <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                gap="20px"
+                sx={{ cursor: "pointer", flexWrap: "wrap" }}
+              >
+                <Button
+                  onClick={() => {
+                    setAllGenre(true);
+                    setEducation(false);
+                    setSports(false);
+                    setComedy(false);
+                    setLifestyle(false);
+                  }}
+                  className={allGenre ? "category-btn-active" : undefined}
+                >
+                  All Genre
+                </Button>
+                <Button
+                  onClick={() => setEducation(!education)}
+                  className={education ? "category-btn-active" : undefined}
+                >
+                  Education
+                </Button>
+                <Button
+                  onClick={() => setSports(!sports)}
+                  className={sports ? "category-btn-active" : undefined}
+                >
+                  Sports
+                </Button>
+                <Button
+                  onClick={() => setComedy(!comedy)}
+                  className={comedy ? "category-btn-active" : undefined}
+                >
+                  Comedy
+                </Button>
+                <Button
+                  onClick={() => setLifestyle(!lifestyle)}
+                  className={lifestyle ? "category-btn-active" : undefined}
+                >
+                  Lifestyle
+                </Button>
 
-                  <FormControl className="category-form">
-                    <Stack direction="row" alignItems="center" gap="10px">
-                      <KeyboardDoubleArrowUpIcon />
-                      <Select
-                        value={sortBy}
-                        onChange={handleSortBy}
-                        className="select-date"
-                      >
-                        <MenuItem value={"releaseDate"}>Release Date</MenuItem>
-                        <MenuItem value={"viewCount"}>View Count</MenuItem>
-                      </Select>
-                    </Stack>
-                  </FormControl>
-                </Box>
-
-                <Box sx={{ margin: "2rem 1rem 0" }}>
-                  <Button
-                    onClick={() => {
-                      handleContentRating("anyAge");
-                    }}
-                    className={
-                      contentRating.anyAge ? "category-btn-active" : undefined
-                    }
-                  >
-                    Any age group
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      handleContentRating("7+");
-                    }}
-                    className={
-                      contentRating.sevenPlus
-                        ? "category-btn-active"
-                        : undefined
-                    }
-                  >
-                    7+
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      handleContentRating("12+");
-                    }}
-                    className={
-                      contentRating.twelvePlus
-                        ? "category-btn-active"
-                        : undefined
-                    }
-                  >
-                    12+
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      handleContentRating("16+");
-                    }}
-                    className={
-                      contentRating.sixteenPlus
-                        ? "category-btn-active"
-                        : undefined
-                    }
-                  >
-                    16+
-                  </Button>
-                  <Button
-                    onClick={() => {
-                      handleContentRating("18+");
-                    }}
-                    className={
-                      contentRating.eighteenPlus
-                        ? "category-btn-active"
-                        : undefined
-                    }
-                  >
-                    18+
-                  </Button>
-                </Box>
+                <FormControl className="category-form">
+                  <Stack direction="row" alignItems="center" gap="10px">
+                    <KeyboardDoubleArrowUpIcon />
+                    <Select
+                      value={sortBy}
+                      onChange={handleSortBy}
+                      className="select-date"
+                    >
+              
+                      <MenuItem  value={"releaseDate"}>Release Date</MenuItem>
+                      <MenuItem value={"viewCount"}>View Count</MenuItem>
+                    </Select>
+                  </Stack>
+                </FormControl>
               </Stack>
             </Box>
 
             {/* Content Rating Pannel Setting for age selection */}
+
+            <Box sx={{ margin: "2rem 1rem 0" }}>
+              <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                gap="40px"
+                sx={{ cursor: "pointer", flexWrap: "wrap" }}
+              >
+                <Button
+                  onClick={() => {
+                    handleContentRating("anyAge");
+                  }}
+                  className={
+                    contentRating.anyAge ? "category-btn-active" : undefined
+                  }
+                >
+                  Any age group
+                </Button>
+                <Button
+                  onClick={() => {
+                    handleContentRating("7+");
+                  }}
+                  className={
+                    contentRating.sevenPlus ? "category-btn-active" : undefined
+                  }
+                >
+                  7+
+                </Button>
+                <Button
+                  onClick={() => {
+                    handleContentRating("12+");
+                  }}
+                  className={
+                    contentRating.twelvePlus ? "category-btn-active" : undefined
+                  }
+                >
+                  12+
+                </Button>
+                <Button
+                  onClick={() => {
+                    handleContentRating("16+");
+                  }}
+                  className={
+                    contentRating.sixteenPlus
+                      ? "category-btn-active"
+                      : undefined
+                  }
+                >
+                  16+
+                </Button>
+                <Button
+                  onClick={() => {
+                    handleContentRating("18+");
+                  }}
+                  className={
+                    contentRating.eighteenPlus
+                      ? "category-btn-active"
+                      : undefined
+                  }
+                >
+                  18+
+                </Button>
+              </Stack>
+            </Box>
           </Box>
         </>
       )}
