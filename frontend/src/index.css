@@ -106,13 +106,15 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  padding: 2rem;
   transform: translate(-50%, -50%);
-  width: 50vw;
-  color: #000;
-  z-index: 1;
-  background-color: #fff;
-  /* background-color: rgb(110, 107, 107); */
+  width: 400px;
+  background: #ffffff;
+  border: 2px solid #000;
+  box-shadow: 24;
+  padding: 1rem;
+  box-shadow: 0px 24px 38px rgba(0, 0, 0, 0.14),
+    0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 @media (max-width: 767px) {
@@ -134,8 +136,9 @@ body {
 
 
   .upload-modal {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+   
+   
   }
 }
 
