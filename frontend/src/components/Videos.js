@@ -4,10 +4,9 @@ import {
   Box,
   Grid,
   Stack,
-  FormControl,
-  MenuItem,
-  Select,
   Button,
+  TextField,
+  InputAdornment,
 } from "@mui/material";
 import axios from "axios";
 import { config } from "../App";
@@ -15,6 +14,8 @@ import { useSnackbar } from "notistack";
 import Loading from "../utils/Loading";
 import VideoGrid from "./VideoGrid";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
+import Search from "@mui/icons-material/Search";
+import SearchBar from "./SearchBar";
 
 const Videos = ({ videoDetails }) => {
   const { enqueueSnackbar } = useSnackbar();
@@ -307,135 +308,133 @@ const Videos = ({ videoDetails }) => {
       {!videoDetails && (
         <>
           <Header handleSearch={handleSearch} />
-          <Box className="genre-pannel">
-            {/* Genre Pannel setting for selection */}
-            <Box sx={{ marginBottom: 1, display: "flex", gap: "10px" }}>
-              <Stack
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                gap="20px"
-                sx={{ cursor: "pointer", flexWrap: "wrap" }}
-              >
-                <Button
-                  onClick={() => {
-                    setAllGenre(true);
-                    setEducation(false);
-                    setSports(false);
-                    setComedy(false);
-                    setLifestyle(false);
-                  }}
-                  className={allGenre ? "category-btn-active" : undefined}
-                >
-                  All Genre
-                </Button>
-                <Button
-                  onClick={() => setEducation(!education)}
-                  className={education ? "category-btn-active" : undefined}
-                >
-                  Education
-                </Button>
-                <Button
-                  onClick={() => setSports(!sports)}
-                  className={sports ? "category-btn-active" : undefined}
-                >
-                  Sports
-                </Button>
-                <Button
-                  onClick={() => setComedy(!comedy)}
-                  className={comedy ? "category-btn-active" : undefined}
-                >
-                  Comedy
-                </Button>
-                <Button
-                  onClick={() => setLifestyle(!lifestyle)}
-                  className={lifestyle ? "category-btn-active" : undefined}
-                >
-                  Lifestyle
-                </Button>
 
-                <FormControl className="category-form">
-                  <Stack direction="row" alignItems="center" gap="10px">
+          <Box sx={{ background: "#202020", position: "sticky", top: "80px" }}>
+            <SearchBar handleSearch={handleSearch}  />
+            <Box className="genre-pannel">
+              {/* Genre Pannel setting for selection */}
+              <Box className="genre">
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  gap="20px"
+                  sx={{ cursor: "pointer", flexWrap: "wrap" }}
+                >
+                  <Button
+                    onClick={() => {
+                      setAllGenre(true);
+                      setEducation(false);
+                      setSports(false);
+                      setComedy(false);
+                      setLifestyle(false);
+                    }}
+                    className={"genre-btn"}
+                  >
+                    All genre-btn
+                  </Button>
+                  <Button
+                    onClick={() => setEducation(!education)}
+                    className={"genre-btn"}
+                  >
+                    Education
+                  </Button>
+                  <Button
+                    onClick={() => setSports(!sports)}
+                    className={"genre-btn"}
+                  >
+                    Sports
+                  </Button>
+                  <Button
+                    onClick={() => setComedy(!comedy)}
+                    className={"genre-btn"}
+                  >
+                    Comedy
+                  </Button>
+                  <Button
+                    onClick={() => setLifestyle(!lifestyle)}
+                    className={"genre-btn"}
+                  >
+                    Lifestyle
+                  </Button>
+
+                  {/* <FormControl className="category-form"> */}
+                  <Stack
+                    className="category-form"
+                    direction="row"
+                    alignItems="center"
+                    gap="10px"
+                  >
                     <KeyboardDoubleArrowUpIcon />
-                    <Select
+                    <select
+                      className="sort-select"
                       value={sortBy}
                       onChange={handleSortBy}
-                      className="select-date"
                     >
-              
-                      <MenuItem  value={"releaseDate"}>Release Date</MenuItem>
-                      <MenuItem value={"viewCount"}>View Count</MenuItem>
-                    </Select>
+                      <option style={{ height: "50px"}} id="release-date-option" value={"releaseDate"}>
+                        Release Date
+                      </option>
+                      <option id="view-count-option" value={"viewCount"}>
+                        View Count
+                      </option>
+                    </select>
                   </Stack>
-                </FormControl>
-              </Stack>
-            </Box>
+                  {/* </FormControl> */}
+                </Stack>
+              </Box>
 
-            {/* Content Rating Pannel Setting for age selection */}
+              {/* Content Rating Pannel Setting for age selection */}
 
-            <Box sx={{ margin: "2rem 1rem 0" }}>
-              <Stack
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                gap="40px"
-                sx={{ cursor: "pointer", flexWrap: "wrap" }}
-              >
-                <Button
-                  onClick={() => {
-                    handleContentRating("anyAge");
-                  }}
-                  className={
-                    contentRating.anyAge ? "category-btn-active" : undefined
-                  }
+              <Box className="" sx={{ margin: "2rem 1rem 0" }}>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+                  gap="40px"
+                  sx={{ cursor: "pointer", flexWrap: "wrap" }}
                 >
-                  Any age group
-                </Button>
-                <Button
-                  onClick={() => {
-                    handleContentRating("7+");
-                  }}
-                  className={
-                    contentRating.sevenPlus ? "category-btn-active" : undefined
-                  }
-                >
-                  7+
-                </Button>
-                <Button
-                  onClick={() => {
-                    handleContentRating("12+");
-                  }}
-                  className={
-                    contentRating.twelvePlus ? "category-btn-active" : undefined
-                  }
-                >
-                  12+
-                </Button>
-                <Button
-                  onClick={() => {
-                    handleContentRating("16+");
-                  }}
-                  className={
-                    contentRating.sixteenPlus
-                      ? "category-btn-active"
-                      : undefined
-                  }
-                >
-                  16+
-                </Button>
-                <Button
-                  onClick={() => {
-                    handleContentRating("18+");
-                  }}
-                  className={
-                    contentRating.eighteenPlus
-                      ? "category-btn-active"
-                      : undefined
-                  }
-                >
-                  18+
-                </Button>
-              </Stack>
+                  <Button
+                    onClick={() => {
+                      handleContentRating("anyAge");
+                    }}
+                    className={"content-rating-btn"}
+                  >
+                    Any age group
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      handleContentRating("7+");
+                    }}
+                    className={"content-rating-btn"}
+                  >
+                    7+
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      handleContentRating("12+");
+                    }}
+                    className={"content-rating-btn"}
+                  >
+                    12+
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      handleContentRating("16+");
+                    }}
+                    className={"content-rating-btn"}
+                  >
+                    16+
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      handleContentRating("18+");
+                    }}
+                    className={"content-rating-btn"}
+                  >
+                    18+
+                  </Button>
+                </Stack>
+              </Box>
             </Box>
           </Box>
         </>

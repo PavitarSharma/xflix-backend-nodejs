@@ -18,9 +18,14 @@ body {
   overflow-x: hidden;
 }
 
+.content-rating-btn,
+.genre {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
 
-
-.category-btn-active {
+.genre-btn, .content-rating {
   background: #fff !important;
   color: #181818 !important;
   padding: 0.5rem 1rem !important;
@@ -41,14 +46,26 @@ body {
 }
 
 .category-form select {
-  background-color: red !important;
+  height: 40px;
+  outline: none;
+  border: none;
+  background: transparent;
 }
 
-.select-date {
-  height: 36px;
+#sort-select {
+  height: 30px;
+  outline: 0;
+  border: 0;
+
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline{
+  height: 12px;
   outline: 0;
   border: 0;
 }
+
+
 
 .search-input {
   width: 300px;
@@ -70,6 +87,15 @@ body {
   color: #444d56;
 }
 
+.search-bar-mobile {
+  display: none;
+}
+
+.search-bar-desktop {
+  display: flex;
+  align-items: center;
+}
+
 .genre-pannel {
   background: #202020;
   display: flex;
@@ -78,8 +104,6 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 2rem 0;
-  position: sticky;
-  top: 80px;
 }
 
 .genre-pannel button {
@@ -88,6 +112,8 @@ body {
   padding: 0.5rem 1rem;
   text-transform: capitalize;
 }
+
+
 
 .iframe {
   width: 100%;
@@ -98,6 +124,11 @@ body {
 .ifarme-container {
   width: 80vw;
   height: 80vh;
+}
+
+#upload-btn {
+  text-transform: capitalize;
+
 }
 
 .upload-modal {
@@ -119,7 +150,23 @@ body {
     height: 50vh;
   }
 
+  .search-bar-desktop {
+    display: none;
+  }
+
+  .search-bar-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
   .upload-modal {
     width: 400px;
   }
 }
+
+
+
+
+

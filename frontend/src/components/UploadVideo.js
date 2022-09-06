@@ -122,8 +122,7 @@ const UploadVideo = () => {
     return (
         <div>
             <Button
-                className="upload-button"
-                sx={{ textTransform: "capitalize", letterSpacing: "1.5px" }}
+                id="upload-btn"
                 variant="contained"
                 startIcon={<FileUploadIcon />}
                 onClick={handleOpen}
@@ -146,7 +145,7 @@ const UploadVideo = () => {
                             }}
                         >
                             <Typography
-                                id="modal-modal-title"
+                                id="upload-btn-submit"
                                 variant="h6"
                                 component="h2"
                                 sx={{ marginBottom: "2px" }}
@@ -156,7 +155,7 @@ const UploadVideo = () => {
                             <CloseIcon onClick={handleClose} sx={{ cursor: "pointer" }} />
                         </Box>
                         <TextField
-                            className="form-input"
+                            className="video-tile-link"
                             id="videoLink"
                             placeholder='Video Link'
                             variant="outlined"
@@ -164,7 +163,7 @@ const UploadVideo = () => {
                             onChange={(e) => handleLink(e.target.value)}
                         />
                         <TextField
-                            className="form-input"
+                            className="video-tile-link"
                             id="thumbnailImageLink"
                             placeholder="Thumbnail Image Link"
                             variant="outlined"
@@ -174,7 +173,7 @@ const UploadVideo = () => {
                             }
                         />
                         <TextField
-                            className="form-input"
+                            className="video-tile-link"
                             id="title"
                             placeholder="Title"
                             variant="outlined"
@@ -186,7 +185,7 @@ const UploadVideo = () => {
                         <FormControl>
                             <InputLabel id="genre">Genre</InputLabel>
                             <Select
-                                className="form-input"
+                                className="genre-btn"
                                 labelId="genre"
                                 id="genreFilter"
                                 label="Genre"
@@ -209,7 +208,6 @@ const UploadVideo = () => {
                         <FormControl>
                             <InputLabel id="age">Suitable age group for the clip</InputLabel>
                             <Select
-                                className="form-input"
                                 labelId="age"
                                 id="ageFilter"
                                 value={postData.contentRating}
@@ -237,7 +235,6 @@ const UploadVideo = () => {
                                 renderInput={(params) => (
                                     <TextField
                                         {...params}
-                                        className="form-input"
                                         helperText="This will be used to sort videos"
                                     />
                                 )}
@@ -260,6 +257,7 @@ const UploadVideo = () => {
                                 Upload Video
                             </Button>
                             <Button
+                                id="upload-btn-cancel"
                                 variant="text"
                                 sx={{ color: "#fff", textTransform: "uppercase", fontSize: "1rem", fontWeight: "bold" }}
                                 onClick={handleClose}

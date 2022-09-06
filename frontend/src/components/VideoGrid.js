@@ -13,8 +13,8 @@ import { TimeFormat } from '../utils/TimeFormat';
 const VideoCard = ({ video, sortBy }) => {
     return (
         <Box>
-            <Card>
-                <Link to={`/video/${video._id}`}>
+            <Card className="video-tile-link">
+                <Link to={`/video/${video._id}`} className="video-tile">
                     <CardMedia
                         component="img"
                         height="250"
