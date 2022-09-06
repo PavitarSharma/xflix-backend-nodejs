@@ -4,14 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --bg-color: #181818;
-  --text-white: #ffffff;
-  --bg-dark: #202020;
-  --bg-blue: #4ca3fc;
-  --bg-gray: #444d56;
-  --text-gray: #444d56;
-}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -45,21 +37,6 @@ body {
   border: none;
   background: transparent;
 }
-
-/* #sort-select {
-  height: 30px;
-  outline: 0;
-  border: 0;
-
-} */
-
-/* .Mui-focused .MuiOutlinedInput-notchedOutline{
-  height: 12px;
-  outline: 0;
-  border: 0;
-} */
-
-
 
 .search-input {
   width: 300px;

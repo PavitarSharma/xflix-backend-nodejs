@@ -288,7 +288,7 @@ const Videos = ({ videoDetails }) => {
         <>
           <Header handleSearch={handleSearch} />
 
-          <Box sx={{ background: "#202020", position: "sticky", top: "80px" }}>
+          <Box sx={{ background: "#202020"}}>
             <SearchBar handleSearch={handleSearch} />
             <Box className="genre-pannel">
               {/* Genre Pannel setting for selection */}
