@@ -132,8 +132,9 @@ body {
   padding: 2rem;
   transform: translate(-50%, -50%);
   width: 500px;
-  color: #fff;
+  color: #000;
   z-index: 1;
+  background-color: #fff;
   /* background-color: rgb(110, 107, 107); */
 }
 

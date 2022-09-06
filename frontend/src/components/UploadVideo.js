@@ -260,7 +260,7 @@ const UploadVideo = () => {
                             <Button
                                 id="upload-btn-cancel"
                                 variant="text"
-                                sx={{ color: "#fff", textTransform: "uppercase", fontSize: "1rem", fontWeight: "bold" }}
+                                sx={{color: "#000", textTransform: "uppercase", fontSize: "1rem", fontWeight: "bold" }}
                                 onClick={handleClose}
                             >
                                 Cancel
