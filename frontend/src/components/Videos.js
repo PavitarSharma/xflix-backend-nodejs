@@ -12,13 +12,13 @@ import SearchBar from "./SearchBar";
 const Videos = ({ videoDetails }) => {
   const { enqueueSnackbar } = useSnackbar();
   const [videos, setVideos] = useState([]);
-  const [color, setColor] = useState({
+  const [buttonColor, setButtonColor] = useState({
     background: null,
-  color: null,
-  padding: null,
-  borderRadius: null,
-  cursor: pointer;
-  })
+    color: null,
+    padding: null,
+    borderRadius: null,
+    cursor: null,
+  });
   const [loading, setLoading] = useState(false);
   const [allGenre, setAllGenre] = useState(true);
   const [education, setEducation] = useState(false);
@@ -35,19 +35,17 @@ const Videos = ({ videoDetails }) => {
   });
   //console.log(videos);
 
-  /*
-  lix
-    1) should display 5 genre buttons on a row
-    2) should display 5 content rating buttons on a row
-    3) should not have same parent for genre and content rating buttons
-    4) should not have "View Count" option selected in sort by dropdown on page load
-    5) should have "Release Date" option selected in sort by dropdown on page load
-    6) should have "View Count" option selectable after clicking on the sort by dropdown
-    7) should open video modal with "Submit" and "Cancel" buttons, on clicking "Upload" button
-    8) should open video modal on clicking "Upload" button and close it on clicking "Cancel" button in the modal
-    9) should have at least 10 links (with class "video-tile-link") to different videos on page load.
-     10) should display the video page on clicking the first video tile (with class "video-tile") which has a parent element with class "video-tile-link"
-   */
+  const setColor = (value) => {
+    return value
+    ? setButtonColor({
+        background: "#fff",
+        color: "#181818",
+        padding: "0.5rem 1rem",
+        borderRadius: "25px",
+        cursor: "pointer",
+      })
+    : undefined;
+  }
 
   const [debounceTimer, setDebounceTimer] = useState(0);
   const [age, setAge] = useState("");
@@ -328,13 +326,17 @@ const Videos = ({ videoDetails }) => {
                       setSports(false);
                       setComedy(false);
                       setLifestyle(false);
+                      setColor(allGenre)
                     }}
                     className={"genre-btn"}
                   >
                     All genre-btn
                   </Button>
                   <Button
-                    onClick={() => setEducation(!education)}
+                    onClick={() => {
+                      setEducation(!education)
+                      setColor(education)
+                    }}
                     className={"genre-btn"}
                   >
                     Education
