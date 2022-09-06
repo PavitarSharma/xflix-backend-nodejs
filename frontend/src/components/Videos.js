@@ -13,10 +13,10 @@ const Videos = ({ videoDetails }) => {
   const { enqueueSnackbar } = useSnackbar();
   const [videos, setVideos] = useState([]);
   const [color, setColor] = useState({
-    background: false,
-  color: #181818 !important;
-  padding: 0.5rem 1rem !important;
-  border-radius: 25px !important;
+    background: null,
+  color: null,
+  padding: null,
+  borderRadius: null,
   cursor: pointer;
   })
   const [loading, setLoading] = useState(false);
