@@ -12,20 +12,13 @@ import SearchBar from "./SearchBar";
 const Videos = ({ videoDetails }) => {
   const { enqueueSnackbar } = useSnackbar();
   const [videos, setVideos] = useState([]);
-  const [buttonColor, setButtonColor] = useState({
-    background: null,
-    color: null,
-    padding: null,
-    borderRadius: null,
-    cursor: null,
-  });
+  // const [buttonColor, setButtonColor] = useState(backgroundColor);
   const [loading, setLoading] = useState(false);
   const [allGenre, setAllGenre] = useState(true);
   const [education, setEducation] = useState(false);
   const [sports, setSports] = useState(false);
   const [comedy, setComedy] = useState(false);
   const [lifestyle, setLifestyle] = useState(false);
-  // eslint-disable-next-line
   const [contentRating, setContentRating] = useState({
     anyAge: true,
     sevenPlus: false,
@@ -34,18 +27,6 @@ const Videos = ({ videoDetails }) => {
     eighteenPlus: false,
   });
   //console.log(videos);
-
-  const setColor = (value) => {
-    return value
-    ? setButtonColor({
-        background: "#fff",
-        color: "#181818",
-        padding: "0.5rem 1rem",
-        borderRadius: "25px",
-        cursor: "pointer",
-      })
-    : undefined;
-  }
 
   const [debounceTimer, setDebounceTimer] = useState(0);
   const [age, setAge] = useState("");
@@ -326,36 +307,62 @@ const Videos = ({ videoDetails }) => {
                       setSports(false);
                       setComedy(false);
                       setLifestyle(false);
-                      setColor(allGenre)
                     }}
                     className={"genre-btn"}
+                    style= {{
+                      background: allGenre ? "#fff" : "",
+                      color: allGenre ? "#181818" : "",
+                      borderRadius: allGenre ? "25px" : "",
+                      padding: allGenre ? "0.5rem 1rem" : ""
+                    }}
                   >
                     All genre-btn
                   </Button>
                   <Button
-                    onClick={() => {
-                      setEducation(!education)
-                      setColor(education)
-                    }}
+                    onClick={() => setEducation(!education)}
                     className={"genre-btn"}
+                    style= {{
+                      background: education ? "#fff" : "",
+                      color: education ? "#181818" : "",
+                      borderRadius: education ? "25px" : "",
+                      padding: education ? "0.5rem 1rem" : ""
+                    }}
                   >
                     Education
                   </Button>
                   <Button
                     onClick={() => setSports(!sports)}
                     className={"genre-btn"}
+                    style= {{
+                      background: sports ? "#fff" : "",
+                      color: sports ? "#181818" : "",
+                      borderRadius: sports ? "25px" : "",
+                      padding: sports ? "0.5rem 1rem" : ""
+                    }}
                   >
                     Sports
                   </Button>
                   <Button
                     onClick={() => setComedy(!comedy)}
                     className={"genre-btn"}
+                    style= {{
+                      background: comedy ? "#fff" : "",
+                      color: comedy ? "#181818" : "",
+                      borderRadius: comedy ? "25px" : "",
+                      padding: comedy ? "0.5rem 1rem" : ""
+                    }}
                   >
                     Comedy
                   </Button>
                   <Button
                     onClick={() => setLifestyle(!lifestyle)}
                     className={"genre-btn"}
+                    style= {{
+                      background: lifestyle ? "#fff" : "",
+                      color: lifestyle ? "#181818" : "",
+                      borderRadius: lifestyle ? "25px" : "",
+                      padding: lifestyle ? "0.5rem 1rem" : ""
+                    }}
                   >
                     Lifestyle
                   </Button>
@@ -404,6 +411,12 @@ const Videos = ({ videoDetails }) => {
                       handleContentRating("anyAge");
                     }}
                     className={"content-rating-btn"}
+                    style= {{
+                      background: contentRating.anyAge ? "#fff" : "",
+                      color: contentRating.anyAge ? "#181818" : "",
+                      borderRadius: contentRating.anyAge ? "25px" : "",
+                      padding: contentRating.anyAge ? "0.5rem 1rem" : ""
+                    }}
                   >
                     Any age group
                   </Button>
@@ -412,6 +425,12 @@ const Videos = ({ videoDetails }) => {
                       handleContentRating("7+");
                     }}
                     className={"content-rating-btn"}
+                    style= {{
+                      background: contentRating.sevenPlus ? "#fff" : "",
+                      color: contentRating.sevenPlus ? "#181818" : "",
+                      borderRadius: contentRating.sevenPlus ? "25px" : "",
+                      padding: contentRating.sevenPlus ? "0.5rem 1rem" : ""
+                    }}
                   >
                     7+
                   </Button>
@@ -420,6 +439,12 @@ const Videos = ({ videoDetails }) => {
                       handleContentRating("12+");
                     }}
                     className={"content-rating-btn"}
+                    style= {{
+                      background: contentRating.twelvePlus ? "#fff" : "",
+                      color: contentRating.twelvePlus ? "#181818" : "",
+                      borderRadius: contentRating.twelvePlus ? "25px" : "",
+                      padding: contentRating.twelvePlus ? "0.5rem 1rem" : ""
+                    }}
                   >
                     12+
                   </Button>
@@ -428,6 +453,12 @@ const Videos = ({ videoDetails }) => {
                       handleContentRating("16+");
                     }}
                     className={"content-rating-btn"}
+                    style= {{
+                      background: contentRating.sixteenPlus ? "#fff" : "",
+                      color: contentRating.sixteenPlus ? "#181818" : "",
+                      borderRadius: contentRating.sixteenPlus ? "25px" : "",
+                      padding: contentRating.sixteenPlus ? "0.5rem 1rem" : ""
+                    }}
                   >
                     16+
                   </Button>
@@ -436,6 +467,12 @@ const Videos = ({ videoDetails }) => {
                       handleContentRating("18+");
                     }}
                     className={"content-rating-btn"}
+                    style= {{
+                      background: contentRating.eighteenPlus ? "#fff" : "",
+                      color: contentRating.eighteenPlus ? "#181818" : "",
+                      borderRadius: contentRating.eighteenPlus ? "25px" : "",
+                      padding: contentRating.eighteenPlus ? "0.5rem 1rem" : ""
+                    }}
                   >
                     18+
                   </Button>

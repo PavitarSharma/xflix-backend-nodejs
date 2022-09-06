@@ -18,6 +18,7 @@ const VideoCard = ({ video, sortBy }) => {
                     <CardMedia
                         component="img"
                         height="250"
+                        width="250"
                         sx={{ objectFit: "cover" }}
                         image={video.previewImage}
                         alt="green iguana"

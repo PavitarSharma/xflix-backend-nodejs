@@ -25,13 +25,7 @@ body {
   margin: 1rem 0;
 }
 
-/* .genre-btn {
-  background: #fff !important;
-  color: #181818 !important;
-  padding: 0.5rem 1rem !important;
-  border-radius: 25px !important;
-  cursor: pointer;
-} */
+
 
 .category-form {
   background: #fff;
@@ -52,18 +46,18 @@ body {
   background: transparent;
 }
 
-#sort-select {
+/* #sort-select {
   height: 30px;
   outline: 0;
   border: 0;
 
-}
+} */
 
-.Mui-focused .MuiOutlinedInput-notchedOutline{
+/* .Mui-focused .MuiOutlinedInput-notchedOutline{
   height: 12px;
   outline: 0;
   border: 0;
-}
+} */
 
 
 
@@ -140,7 +134,7 @@ body {
   width: 500px;
   color: #fff;
   z-index: 1;
-  background-color: rgb(110, 107, 107);
+  /* background-color: rgb(110, 107, 107); */
 }
 
 @media (max-width: 767px) {

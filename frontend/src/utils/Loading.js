@@ -9,7 +9,7 @@ import {
 const Loading = () => {
     return (
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}>
-            <Stack gap="20px" alignItems="center">
+            <Stack gap="20px" alignItems="center" color="#fff">
                 <CircularProgress />
                 <Typography variant="h6">Loading...</Typography>
             </Stack>

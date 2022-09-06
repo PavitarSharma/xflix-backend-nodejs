@@ -141,7 +141,8 @@ const UploadVideo = () => {
                             sx={{
                                 display: "flex",
                                 alignItems: "center",
-                                justifyContent: "space-between"
+                                justifyContent: "space-between",
+                                
                             }}
                         >
                             <Typography

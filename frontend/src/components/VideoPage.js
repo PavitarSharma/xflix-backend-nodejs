@@ -20,7 +20,7 @@ const VideoDetails = () => {
     const [downVote, setDownVote] = useState(0)
     const { id } = useParams()
 
-
+   
 
 
     const fetchVideoById = async () => {
@@ -46,10 +46,11 @@ const VideoDetails = () => {
     }
 
     useEffect(() => {
+        
         fetchVideoById()
         updateViews()
         
-        //window.screenTop(0, 0)
+        
         // eslint-disable-next-line
     }, [id])
 
