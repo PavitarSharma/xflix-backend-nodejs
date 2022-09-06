@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Stack } from "@mui/material";
 // import UploadIcon from '@mui/icons-material/Upload';
-import SearchBar from "./SearchBar";
 import SearchIcon from "@mui/icons-material/Search";
 import UploadVideo from "./UploadVideo";
 

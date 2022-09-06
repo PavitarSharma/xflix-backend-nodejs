@@ -4,9 +4,7 @@ import {
   Box,
   Grid,
   Stack,
-  Button,
-  TextField,
-  InputAdornment,
+  Button
 } from "@mui/material";
 import axios from "axios";
 import { config } from "../App";
@@ -14,7 +12,6 @@ import { useSnackbar } from "notistack";
 import Loading from "../utils/Loading";
 import VideoGrid from "./VideoGrid";
 import KeyboardDoubleArrowUpIcon from "@mui/icons-material/KeyboardDoubleArrowUp";
-import Search from "@mui/icons-material/Search";
 import SearchBar from "./SearchBar";
 
 const Videos = ({ videoDetails }) => {
@@ -26,6 +23,7 @@ const Videos = ({ videoDetails }) => {
   const [sports, setSports] = useState(false);
   const [comedy, setComedy] = useState(false);
   const [lifestyle, setLifestyle] = useState(false);
+  // eslint-disable-next-line
   const [contentRating, setContentRating] = useState({
     anyAge: true,
     sevenPlus: false,
