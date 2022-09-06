@@ -1,29 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="37.8600" tests="11" failures="0">
-  <testsuite name="Root Suite" timestamp="2022-09-06T09:33:59" tests="0" file="specs/homePageSpec.js" time="0.0000" failures="0">
+<testsuites name="Mocha Tests" time="122.8270" tests="11" failures="2">
+  <testsuite name="Root Suite" timestamp="2022-09-06T10:06:18" tests="0" file="specs/homePageSpec.js" time="0.0000" failures="0">
   </testsuite>
-  <testsuite name="XFlix" timestamp="2022-09-06T09:33:59" tests="11" time="37.7400" failures="0">
-    <testcase name="XFlix should display 5 genre buttons on a row" time="5.8100" classname="should display 5 genre buttons on a row">
+  <testsuite name="XFlix" timestamp="2022-09-06T10:06:18" tests="11" time="122.7860" failures="2">
+    <testcase name="XFlix should display 5 genre buttons on a row" time="9.8860" classname="should display 5 genre buttons on a row">
+      <failure message="Timed out retrying after 4000ms: Not enough elements found. Found &apos;1&apos;, expected &apos;5&apos;." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Not enough elements found. Found '1', expected '5'.
+    at Context.eval (http://localhost:8081/__cypress/tests?p=specs/homePageSpec.js:331:31)]]></failure>
     </testcase>
-    <testcase name="XFlix should display 5 content rating buttons on a row" time="1.5440" classname="should display 5 content rating buttons on a row">
+    <testcase name="XFlix should display 5 content rating buttons on a row" time="1.9760" classname="should display 5 content rating buttons on a row">
     </testcase>
-    <testcase name="XFlix should not have same parent for genre and content rating buttons" time="1.2200" classname="should not have same parent for genre and content rating buttons">
+    <testcase name="XFlix should not have same parent for genre and content rating buttons" time="3.1350" classname="should not have same parent for genre and content rating buttons">
     </testcase>
-    <testcase name="XFlix should not have &quot;View Count&quot; option selected in sort by dropdown on page load" time="1.2490" classname="should not have &quot;View Count&quot; option selected in sort by dropdown on page load">
+    <testcase name="XFlix should not have &quot;View Count&quot; option selected in sort by dropdown on page load" time="2.2550" classname="should not have &quot;View Count&quot; option selected in sort by dropdown on page load">
     </testcase>
-    <testcase name="XFlix should have &quot;Release Date&quot; option selected in sort by dropdown on page load" time="1.0700" classname="should have &quot;Release Date&quot; option selected in sort by dropdown on page load">
+    <testcase name="XFlix should have &quot;Release Date&quot; option selected in sort by dropdown on page load" time="11.9360" classname="should have &quot;Release Date&quot; option selected in sort by dropdown on page load">
     </testcase>
-    <testcase name="XFlix should have &quot;View Count&quot; option selectable after clicking on the sort by dropdown" time="1.4950" classname="should have &quot;View Count&quot; option selectable after clicking on the sort by dropdown">
+    <testcase name="XFlix should have &quot;View Count&quot; option selectable after clicking on the sort by dropdown" time="8.6090" classname="should have &quot;View Count&quot; option selectable after clicking on the sort by dropdown">
     </testcase>
-    <testcase name="XFlix should have &quot;Upload&quot; button on landing page on load" time="2.5740" classname="should have &quot;Upload&quot; button on landing page on load">
+    <testcase name="XFlix should have &quot;Upload&quot; button on landing page on load" time="1.7360" classname="should have &quot;Upload&quot; button on landing page on load">
     </testcase>
-    <testcase name="XFlix should open video modal with &quot;Submit&quot; and &quot;Cancel&quot; buttons, on clicking &quot;Upload&quot; button" time="6.4120" classname="should open video modal with &quot;Submit&quot; and &quot;Cancel&quot; buttons, on clicking &quot;Upload&quot; button">
+    <testcase name="XFlix should open video modal with &quot;Submit&quot; and &quot;Cancel&quot; buttons, on clicking &quot;Upload&quot; button" time="10.4700" classname="should open video modal with &quot;Submit&quot; and &quot;Cancel&quot; buttons, on clicking &quot;Upload&quot; button">
     </testcase>
-    <testcase name="XFlix should open video modal on clicking &quot;Upload&quot; button and close it on clicking &quot;Cancel&quot; button in the modal" time="4.7580" classname="should open video modal on clicking &quot;Upload&quot; button and close it on clicking &quot;Cancel&quot; button in the modal">
-    </testcase>
-    <testcase name="XFlix should have at least 10 links (with class &quot;video-tile-link&quot;) to different videos on page load." time="3.8720" classname="should have at least 10 links (with class &quot;video-tile-link&quot;) to different videos on page load.">
-    </testcase>
-    <testcase name="XFlix should display the video page on clicking the first video tile (with class &quot;video-tile&quot;) which has a parent element with class &quot;video-tile-link&quot;" time="5.5660" classname="should display the video page on clicking the first video tile (with class &quot;video-tile&quot;) which has a parent element with class &quot;video-tile-link&quot;">
+    <testcase name="XFlix &quot;before each&quot; hook for &quot;should open video modal on clicking &quot;Upload&quot; button and close it on clicking &quot;Cancel&quot; button in the modal&quot;" time="9.2650" classname="&quot;before each&quot; hook for &quot;should open video modal on clicking &quot;Upload&quot; button and close it on clicking &quot;Cancel&quot; button in the modal&quot;">
+      <failure message="The following error originated from your application code, not from Cypress.
+
+  &gt; Module build failed (from ../../../059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/babel-loader@8.2.5_tb6moc662p5idmcg3l5ipbhpta/node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/crio-user/workspace/pavitarsharma144-ME_BUILDOUT_XFLIX_REACT/frontend/src/components/Videos.js: Unexpected keyword &apos;const&apos;. (16:2)
+
+[0m [90m 14 |[39m   [36mconst[39m [videos[33m,[39m setVideos] [33m=[39m useState([])[33m;[39m[0m
+[0m [90m 15 |[39m   [36mconst[39m[0m
+[0m[31m[1m&gt;[22m[39m[90m 16 |[39m   [36mconst[39m [loading[33m,[39m setLoading] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 17 |[39m   [36mconst[39m [allGenre[33m,[39m setAllGenre] [33m=[39m useState([36mtrue[39m)[33m;[39m[0m
+[0m [90m 18 |[39m   [36mconst[39m [education[33m,[39m setEducation] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+[0m [90m 19 |[39m   [36mconst[39m [sports[33m,[39m setSports] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+    at instantiate (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:72:32)
+    at constructor (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:366:12)
+    at FlowParserMixin.raise (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:3453:19)
+    at FlowParserMixin.checkReservedWord (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:14280:12)
+    at FlowParserMixin.parseIdentifierName (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:14229:12)
+    at FlowParserMixin.parseIdentifier (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:14199:23)
+    at FlowParserMixin.parseBindingAtom (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:12068:17)
+    at FlowParserMixin.parseBindingAtom (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:6680:22)
+    at FlowParserMixin.parseVarId (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:15532:20)
+    at FlowParserMixin.parseVarId (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:6695:11)
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `XFlix`" type="Error"><![CDATA[Error: The following error originated from your application code, not from Cypress.
+
+  > Module build failed (from ../../../059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/babel-loader@8.2.5_tb6moc662p5idmcg3l5ipbhpta/node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/crio-user/workspace/pavitarsharma144-ME_BUILDOUT_XFLIX_REACT/frontend/src/components/Videos.js: Unexpected keyword 'const'. (16:2)
+
+[0m [90m 14 |[39m   [36mconst[39m [videos[33m,[39m setVideos] [33m=[39m useState([])[33m;[39m[0m
+[0m [90m 15 |[39m   [36mconst[39m[0m
+[0m[31m[1m>[22m[39m[90m 16 |[39m   [36mconst[39m [loading[33m,[39m setLoading] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+[0m [90m    |[39m   [31m[1m^[22m[39m[0m
+[0m [90m 17 |[39m   [36mconst[39m [allGenre[33m,[39m setAllGenre] [33m=[39m useState([36mtrue[39m)[33m;[39m[0m
+[0m [90m 18 |[39m   [36mconst[39m [education[33m,[39m setEducation] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+[0m [90m 19 |[39m   [36mconst[39m [sports[33m,[39m setSports] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+    at instantiate (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:72:32)
+    at constructor (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:366:12)
+    at FlowParserMixin.raise (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:3453:19)
+    at FlowParserMixin.checkReservedWord (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:14280:12)
+    at FlowParserMixin.parseIdentifierName (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:14229:12)
+    at FlowParserMixin.parseIdentifier (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:14199:23)
+    at FlowParserMixin.parseBindingAtom (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:12068:17)
+    at FlowParserMixin.parseBindingAtom (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:6680:22)
+    at FlowParserMixin.parseVarId (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:15532:20)
+    at FlowParserMixin.parseVarId (/home/crio-user/059d1a9c1e85ef234587ead7dabb75134f4819e173608a154d249f5ff0add6c7/node_modules/.pnpm/@babel+parser@7.18.13/node_modules/@babel/parser/lib/index.js:6695:11)
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `XFlix`
+    at Object../src/components/Videos.js (http://localhost:8081/static/js/bundle.js:1104:7)
+    at Object.options.factory (http://localhost:8081/static/js/bundle.js:101203:31)
+    at __webpack_require__ (http://localhost:8081/static/js/bundle.js:100608:33)
+    at fn (http://localhost:8081/static/js/bundle.js:100860:21)
+    at Module../src/App.js (http://localhost:8081/static/js/bundle.js:20:76)
+    at Module.options.factory (http://localhost:8081/static/js/bundle.js:101203:31)
+    at __webpack_require__ (http://localhost:8081/static/js/bundle.js:100608:33)
+    at fn (http://localhost:8081/static/js/bundle.js:100860:21)
+    at Module../src/index.js (http://localhost:8081/static/js/bundle.js:1119:62)
+    at Module.options.factory (http://localhost:8081/static/js/bundle.js:101203:31)]]></failure>
     </testcase>
   </testsuite>
 </testsuites>

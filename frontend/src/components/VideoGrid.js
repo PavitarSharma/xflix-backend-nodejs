@@ -25,7 +25,7 @@ const VideoCard = ({ video, sortBy }) => {
                 </Link>
             </Card>
 
-            <CardContent sx={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            <CardContent sx={{ display: "flex", flexDirection: "column", gap: "10px", color: "#fff" }}>
                 <Typography variant="p">
                     {video.title}
                 </Typography>

@@ -48,10 +48,12 @@ const VideoDetails = () => {
     useEffect(() => {
         fetchVideoById()
         updateViews()
-        // window.screenTop(0, 0)
-
+        
+        //window.screenTop(0, 0)
         // eslint-disable-next-line
     }, [id])
+
+  
 
     const patchVoteData = async (vote) => {
         const voteData = {
@@ -107,7 +109,7 @@ const VideoDetails = () => {
                         </Box>
                         <Box sx={{ width: "80vw", marginTop: "16px" }}>
                             <Stack direction="row" alignItems="center" justifyContent="space-between">
-                                <Box>
+                                <Box sx={{ color: "#fff"}}>
                                     <Typography variant="h5">{selectVideo.title}</Typography>
                                     <Typography variant="p">
                                         {selectVideo.contentRating} | {" "}

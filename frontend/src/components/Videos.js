@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
-import {
-  Box,
-  Grid,
-  Stack,
-  Button
-} from "@mui/material";
+import { Box, Grid, Stack, Button } from "@mui/material";
 import axios from "axios";
 import { config } from "../App";
 import { useSnackbar } from "notistack";
@@ -17,6 +12,13 @@ import SearchBar from "./SearchBar";
 const Videos = ({ videoDetails }) => {
   const { enqueueSnackbar } = useSnackbar();
   const [videos, setVideos] = useState([]);
+  const [color, setColor] = useState({
+    background: false,
+  color: #181818 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 25px !important;
+  cursor: pointer;
+  })
   const [loading, setLoading] = useState(false);
   const [allGenre, setAllGenre] = useState(true);
   const [education, setEducation] = useState(false);
@@ -308,7 +310,7 @@ const Videos = ({ videoDetails }) => {
           <Header handleSearch={handleSearch} />
 
           <Box sx={{ background: "#202020", position: "sticky", top: "80px" }}>
-            <SearchBar handleSearch={handleSearch}  />
+            <SearchBar handleSearch={handleSearch} />
             <Box className="genre-pannel">
               {/* Genre Pannel setting for selection */}
               <Box className="genre">
@@ -369,7 +371,11 @@ const Videos = ({ videoDetails }) => {
                       value={sortBy}
                       onChange={handleSortBy}
                     >
-                      <option style={{ height: "50px"}} id="release-date-option" value={"releaseDate"}>
+                      <option
+                        style={{ height: "50px" }}
+                        id="release-date-option"
+                        value={"releaseDate"}
+                      >
                         Release Date
                       </option>
                       <option id="view-count-option" value={"viewCount"}>
