@@ -27,7 +27,7 @@ const getVideos = catchAsync(async (req, res) => {
 });
 
 const postVideos = catchAsync(async (req, res) => {
-  console.log("From controller");
+
   const video = await videoService.postVideo(req.body);
   if (!video) {
     res.status(400).json({ message: "Video cannot be posted" });
