@@ -1,4 +1,3 @@
-
 import basePage from './basePage';
 
 /**
